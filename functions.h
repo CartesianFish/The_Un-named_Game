@@ -6,7 +6,10 @@ using namespace std;
 #define FUNCTIONS_H
 
 
-bool askBoolQ(const string question, const char char1, const char char2, const bool acceptCaps, const bool repeatQuestion = true);
+bool askBoolQ(const string question, const char trueChar, const char falseChar, const bool acceptReverseCaps);
 
+int askIntQ(const string question, const int min, const int max);
+
+void start();
 
 #endif

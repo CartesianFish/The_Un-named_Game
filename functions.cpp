@@ -1,49 +1,90 @@
-//#include <string>
+#include <iostream>
+#include <string>
 #include "functions.h"
 
 using namespace std;
 
-bool askBoolQ(const string question, const char char1, const char char2, const bool acceptCaps, const bool repeatQuestion = true)
+bool askBoolQ(const string question, const char trueChar, const char falseChar, const bool acceptReverseCaps)
 {
   char answerChar = '`'; 
-  char char1ReverseCap = '`';
-  char char2ReverseCap = 'a';
-  if(acceptCaps == true && char1 > 97 && char1 < 122)
+  char trueCharReverseCap = '`';
+  char falseCharReverseCap = 'a';
+  if(acceptReverseCaps == true && trueChar >= 97 && trueChar <= 122)
   {
-    char1ReverseCap = char1 - 32;
+    trueCharReverseCap = trueChar - 32;
   }
 
-  if(acceptCaps == true && char2 >= 97 && char2 =< 122)
+  if(acceptReverseCaps == true && falseChar >= 97 && falseChar <= 122)
   {
-    char2ReverseCap = char2 - 32;
+    falseCharReverseCap = falseChar - 32;
   }
 
-  if(acceptCaps == true && char1 >= 65 && char1 =< 90)
+  if(acceptReverseCaps == true && trueChar >= 65 && trueChar <= 90)
   {
-    char1ReverseCap = char1 + 32;
+    trueCharReverseCap = trueChar + 32;
   }
 
-  if(acceptCaps == true && char2 >= 65 && char2 =< 90)
+  if(acceptReverseCaps == true && falseChar >= 65 && falseChar <= 90)
   {
-    char2ReverseCap = char2 + 32;
+    falseCharReverseCap = falseChar + 32;
   }
 
-  while(answerChar != char1 && answerChar != char2 && answerChar != char1ReverseCap && answerChar != char2ReverseCap)
+  if(acceptReverseCaps == true)
   {
-    cout<<question<<endl;
-    cin>>answerChar;
+    while(answerChar != trueChar && answerChar != falseChar && answerChar != trueCharReverseCap && answerChar != falseCharReverseCap)
+    {
+      cout<<question<<endl;
+      cin>>answerChar;
+    }
   }
 
+  if(acceptReverseCaps == false)
+  {
+    while(answerChar != trueChar && answerChar != falseChar)
+    {
+      cout<<question<<endl;
+      cin>>answerChar;
+    }
 
+    if(answerChar == trueChar)
+    {
+      return true;
+    }
+
+    if(answerChar == falseChar)
+    {
+      return false;
+    }
+  }
+
+  return false;
+}
+
+
+int askIntQ(const string question, const int min, const int max)
+{
+  int answer = -9999;
+  if(answer < min || answer > max)
+  {
+    cout<<question;
+    cin>>answer;
+  }
+  return answer;
 }
 
 
 void start()
 {
+  const string question0 = "Do you know the amount of colums and rows of your display/window?";
+  int rows = 0;
+  int cols = 0;
   bool isSizeKnown = false;
-  char isSizeKnownAnswer = 'a';
   //first, find the size of the screen
-  cout<<"Lets find the size of your screen before you start."<<endl<<"Do you know the amount of colums and rows of your display/window?"<<endl;
-  cin>>isSizeKnownAnswer;
-  if(isSizeKnownAnswer )
+  cout<<"Lets find the size of your screen before you start."<<endl;
+  isSizeKnown = askBoolQ(question0, 'y', 'n', true);
+  if(isSizeKnown == true)
+  {
+    cout<<"what is the number of rows and cols of your display?";
+    cin>>rows>>cols;
+  }
 }
