@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include "art.h"
+#include "functions.h"
 #include <unistd.h>
 #include <stdlib.h>
 using namespace std;
-
 
 
 int main()
