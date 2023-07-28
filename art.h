@@ -1,13 +1,16 @@
+#ifndef ART_H
+
+#define ART_H
+
 #include <string>
 #include <fstream>
 using namespace std;
 
-class art
+class artTotal
 {
   public:
-    art(); //Constructor
-    ~art(); //Destructor
-    //void setName(string name);
+    //art(); //Constructor
+    //~art(); //Destructor
     const int HOUSE_TYPE0_X = 25;
     const int HOUSE_TYPE0_Y = 13;
     const int HOUSE_TYPE1_XY = 25;
@@ -51,4 +54,7 @@ class art
     "|       ====            |",
     "-------------------------"
     };
+    void printArt(const int artIndex, const int x, const int y);
 };
+
+ #endif

@@ -26,14 +26,12 @@ int main()
       sleep(SLEEP_TIME);
       for(int i = 0; i < amount; i++)
       {
-        art arts;
+        artTotal arts;
         arts.printArt(0, arts.HOUSE_TYPE0_X, arts.HOUSE_TYPE0_Y);
         cout.flush();
         cout<<i+1<<endl;
         sleep(SLEEP_TIME);
         system("cls");
-        
-      
       }
       input = "";
     }

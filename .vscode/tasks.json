@@ -9,7 +9,6 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/art.h",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {

@@ -4,7 +4,7 @@
 #include "art.h"
 using namespace std;
 
-void art::printArt(const int artIndex, const int x, const int y)
+void artTotal::printArt(const int artIndex, const int x, const int y)
 {
   switch(artIndex)
   {
@@ -25,12 +25,12 @@ void art::printArt(const int artIndex, const int x, const int y)
   cout.flush();
 }
 
-art::art(void)
-{
-  return;
-}
+// art::art(void)
+// {
+//   return;
+// }
 
-art::~art(void)
-{
-  return;
-}
+// art::~art(void)
+// {
+//   return;
+// }
