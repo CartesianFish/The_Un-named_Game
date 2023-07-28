@@ -5,6 +5,7 @@ using namespace std;
 class art
 {
   public:
+    //void setName(string name);
     const int HOUSE_TYPE0_X = 25;
     const int HOUSE_TYPE0_Y = 13;
     const int HOUSE_TYPE1_XY = 25;
@@ -49,4 +50,7 @@ class art
     "-------------------------"
     };
     void printArt(const int artIndex, const int x, const int y);
+    art(); //Constructor
+    ~art(); //Destructor
 };
+

@@ -24,3 +24,13 @@ void art::printArt(const int artIndex, const int x, const int y)
   }
   cout.flush();
 }
+
+art::art(void)
+{
+  return;
+}
+
+art::~art(void)
+{
+  return;
+}
