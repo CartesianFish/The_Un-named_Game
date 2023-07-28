@@ -24,10 +24,10 @@ int main()
       cin>>amount;
       cout.flush();
       sleep(SLEEP_TIME);
+      artTotal artPiece;
       for(int i = 0; i < amount; i++)
       {
-        artTotal arts;
-        arts.printArt(0, arts.HOUSE_TYPE0_X, arts.HOUSE_TYPE0_Y);
+        artPiece.printArt(0, artPiece.HOUSE_TYPE0_X, artPiece.HOUSE_TYPE0_Y);
         cout.flush();
         cout<<i+1<<endl;
         sleep(SLEEP_TIME);

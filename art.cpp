@@ -23,14 +23,15 @@ void artTotal::printArt(const int artIndex, const int x, const int y)
       break;
   }
   cout.flush();
+  return;
+};
+
+artTotal::artTotal(void)
+{
+  return;
 }
 
-// art::art(void)
-// {
-//   return;
-// }
-
-// art::~art(void)
-// {
-//   return;
-// }
+artTotal::~artTotal(void)
+{
+  return;
+}
