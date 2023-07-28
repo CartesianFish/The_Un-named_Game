@@ -51,6 +51,4 @@ class art
     "|       ====            |",
     "-------------------------"
     };
-    void printArt(const int artIndex, const int x, const int y);
 };
-
