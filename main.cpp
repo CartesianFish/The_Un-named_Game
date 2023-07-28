@@ -4,6 +4,7 @@
 #include "functions.h"
 #include <unistd.h>
 #include <stdlib.h>
+//#include <conio.h>
 using namespace std;
 
 
@@ -30,7 +31,9 @@ int main()
         cout.flush();
         cout<<i+1<<endl;
         sleep(SLEEP_TIME);
-        system("clear");
+        system("cls");
+        
+      
       }
       input = "";
     }
