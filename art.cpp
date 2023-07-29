@@ -10,6 +10,7 @@ void artPrint::printArt(const int artIndex)
   switch(artIndex)
   {
     case 0:
+    {
       fstream art0;
       art0.open("art0.txt", ios::in);
       if(!art0)
@@ -20,16 +21,19 @@ void artPrint::printArt(const int artIndex)
       else
       {
         char ch = ' ';
+        while(1)
+        {
+        art0>>ch;
+        }
       }
-      while(1)
-      {
-        
-      }
+      
       break;
+    }
     
     case 1:
-     
+    {
       break;
+    }
   }
   cout.flush();
   return;
