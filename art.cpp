@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void artPrint::printArt(const int artIndex)
+void art::printArt(const int artIndex)
 {
   switch(artIndex)
   {
@@ -21,17 +21,50 @@ void artPrint::printArt(const int artIndex)
       else
       {
         char ch = ' ';
+        string artOutput[13] = {};
         while(1)
         {
-        art0>>ch;
+          for(int i = 0; i < 13; i++)
+          {
+            for(int j = 0; j < 25; j++)
+            {
+              art0>>ch;
+              artOutput[i] += ch;
+            }
+            cout<<artOutput[i]<<endl;
+          }
         }
       }
-      
       break;
     }
     
     case 1:
     {
+      fstream art1;
+      art1.open("art1.txt", ios::in);
+      if(!art1)
+      {
+        cout<<"file not available"<<endl;
+      }
+
+      else
+      {
+        char ch = ' ';
+        string artOutput[25] = {};
+        while(1)
+        {
+          for(int i = 0; i < 25; i++)
+          {
+            for(int j = 0; j < 25; j++)
+            {
+              art1>>ch;
+              artOutput[i] += ch;
+            }
+            cout<<artOutput[i]<<endl;
+          }
+          break;
+        }
+      }
       break;
     }
   }
@@ -39,12 +72,12 @@ void artPrint::printArt(const int artIndex)
   return;
 };
 
-// artTotal::artTotal(void)
-// {
-//   return;
-// }
+art::art(void)
+{
+  return;
+}
 
-// artTotal::~artTotal(void)
-// {
-//   return;
-//}
+art::~art(void)
+{
+  return;
+}
