@@ -7,6 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -26,3 +27,5 @@
     ],
     "version": "2.0.0"
 }
+
+//"C:/Users/gishs/Documents/GitHub/The_Un-named_Game/art.h",

@@ -1,60 +1,20 @@
-#ifndef ART_H
+//#ifndef ART_H
 
-#define ART_H
+//#define ART_H
 
 #include <string>
 //#include <fstream>
 using namespace std;
 
-class artTotal
+class artPrint
 {
   public:
-    artTotal(); //Constructor
-    ~artTotal(); //Destructor
+    artPrint(); //Constructor
+    ~artPrint(); //Destructor
     const int HOUSE_TYPE0_X = 25;
     const int HOUSE_TYPE0_Y = 13;
     const int HOUSE_TYPE1_XY = 25;
-    string houseType0[13] = {  //art 0
-    "-------------------------",
-    "|             )         |",
-    "|            (          |",
-    "|    ________[]_        |",
-    "|   /^=^-^-^=^-^\\      |",
-    "|  /^-^-^-^-^-^-^\\     |",
-    "| /__^_^_^_^^_^_^_\\    |",
-    "|  |  .==.       |      |",
-    "|^^|  |LI|  [}{] |^^^^^ |",
-    "|&&|__|__|_______|&&    |",
-    "|     ====              |",
-    "|       ====            |",
-    "-------------------------"};
-    string houseType1[25] = {  //art 1
-    "-------------------------",
-    "|             )         |",
-    "|            (          |",
-    "|    ________[]_        |",
-    "|   /^=^-^-^=^-^\\      |",
-    "|  /^-^-^-^-^-^-^\\     |",
-    "| /__^_^_^_^^_^_^_\\    |",
-    "|  |  .==.       |      |",
-    "|^^|  |LI|  [}{] |^^^^^ |",
-    "|&&|__|__|_______|&&    |",
-    "|     ====              |",
-    "|       ====            |",
-    "|            (          |",
-    "|             )         |",
-    "|    ________[]_        |",
-    "|   /^=^-^-^=^-^\\      |",
-    "|  /^-^-^-^-^-^-^\\     |",
-    "| /__^_^_^_^^_^_^_\\    |",
-    "|  |  .==.       |      |",
-    "|^^|  |LI|  [}{] |^^^^^ |",
-    "|&&|__|__|_______|&&    |",
-    "|     ====              |",
-    "|       ====            |",
-    "-------------------------"
-    };
-    void printArt(const int artIndex, const int x, const int y);
+    void printArt(const int artIndex);
 };
 
- #endif
+ //#endif
