@@ -13,6 +13,7 @@ void art::printArt(const int artIndex)
     {
       fstream art0;
       art0.open("art0.txt", ios::in);
+      art0.unsetf(ios_base::skipws);
       if(!art0)
       {
         cout<<"file not available"<<endl;
@@ -21,19 +22,45 @@ void art::printArt(const int artIndex)
       else
       {
         char ch = ' ';
-        string artOutput[13] = {};
-        while(1)
+        int x = 0;
+        string artOutput = "";
+        bool fileOpen = true;
+        while(fileOpen)
         {
-          for(int i = 0; i < 13; i++)
+          if(art0.eof())
           {
+            art0.close();
+            fileOpen = false;
+            return;
+          }
+          for(int i = 0; i < 12; i++)
+          {
+            artOutput = "";
+            
             for(int j = 0; j < 25; j++)
             {
               art0>>ch;
-              artOutput[i] += ch;
+              if(ch == '\n')
+              {
+                art0>>ch;
+              }
+              //cout<<ch;
+              artOutput += ch;
             }
-            cout<<artOutput[i]<<endl;
+            x++;
+            //cout<<endl;
+            cout<<artOutput<<endl;
+            if(x == 13)
+            {
+              //art0.close();
+              fileOpen = false;
+              return;
+            }
+            //return;
           }
+          //break;
         }
+        break;
       }
       break;
     }
@@ -42,6 +69,7 @@ void art::printArt(const int artIndex)
     {
       fstream art1;
       art1.open("art1.txt", ios::in);
+      art1.unsetf(ios_base::skipws);
       if(!art1)
       {
         cout<<"file not available"<<endl;

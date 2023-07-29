@@ -28,10 +28,10 @@ int main()
       for(int i = 0; i < amount; i++)
       {
         artPrinter.printArt(0);
-        //cout.flush();
+        cout.flush();
         cout<<i+1<<endl;
         sleep(SLEEP_TIME);
-        system("cls");
+        //system("cls");
       }
       input = "";
     }
