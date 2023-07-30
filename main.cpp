@@ -2,6 +2,7 @@
 #include <string>
 #include "art.h"
 #include "functions.h"
+#include "start.h"
 #include <unistd.h>
 #include <stdlib.h>
 //#include <conio.h>
@@ -16,11 +17,10 @@ int main()
   {
     int amount = 0;
     string input = "";
-    cout<<"command: ";
-    cin>>input;
-    if(input == "go")
+    input = getStartCommands();
+    if(input == "go" || input == "Go")
     {
-      cout<<"amount: ";
+      cout<<"Amount: ";
       cin>>amount;
       cout.flush();
       sleep(SLEEP_TIME);
