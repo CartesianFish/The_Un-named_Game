@@ -26,6 +26,8 @@ class object_tile
 
 };
 
+
+
 class box
 {
   public:
@@ -33,8 +35,17 @@ class box
      const int box_lenght = 10;
      const int box_height = 10;
      int box_index = 0;
-     object_tile workspace [10][10][10];
+     object_tile workspace [10][10];
 
+};
 
-
+class gameField
+{
+  public:
+      int rows;
+      int columns;
+      box matrix[10][10];
+      gameField();
+      void printField();
+      
 };

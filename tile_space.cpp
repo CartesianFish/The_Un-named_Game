@@ -51,3 +51,22 @@ void object_tile::rotate_output_dir(const int dir)
     }
   }
 }
+
+gameField::gameField()
+{
+  int x = 0;
+  for(int i = 0; i < 10; i++)
+  {
+    for(int j = 0; j < 10; j++)
+    {
+      matrix[i][j].box_index = (x);
+      x++;
+    }
+  }
+}
+
+
+void printField()
+{
+  
+}

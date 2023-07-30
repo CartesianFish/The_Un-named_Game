@@ -1,12 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <unistd.h>
 #include <stdlib.h>
-//#include <ioctl.h> //ioctl() and TIOCGWINSZ
-#include <unistd.h> // for STDOUT_FILENO
 #include "functions.h"
-#include "globalVars.h"
 
 using namespace std;
 
@@ -84,7 +80,6 @@ void getScreenSize()
   int width = 0;
   int height = 0;
   cout<<"Let's find the number of collums of your screen"<<endl<<"This test will print off a lot of 0s, count the number of ones that can fit the width and height of the window, and respond with the width found, then the height."<<endl;
-  system("clear");
   cout<<string(40000,'0')<<endl;
   cin>>width;
   cout<<"now the height"<<endl;
@@ -107,7 +102,7 @@ void start()
   fin.open("savedata.dat");
   if(!fin.is_open())
   {
-    savefileExists == false;
+    savefileExists = false;
   }
 
   if(savefileExists == false)
