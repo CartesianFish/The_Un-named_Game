@@ -1,4 +1,4 @@
-//#include <string>
+#include <string>
 
 
 using namespace std;
@@ -7,9 +7,7 @@ using namespace std;
 class item
 {
   public:
-    //string name = "";
-    //string item_type = "";
-    int stack_size = 64;
-    
-
+    string name = "";
+    string item_type = "";
+    unsigned short int stack_size = 64;
 };

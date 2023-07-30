@@ -132,6 +132,7 @@
     <ClCompile Include="items.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="The_Un-named_Game.cpp" />
+    <ClCompile Include="tile_space.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="art.h" />

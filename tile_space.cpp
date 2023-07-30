@@ -24,10 +24,10 @@ void object_tile::rotate_input_dir(const int dir)
 
   if (tile_type == 1)
   {
-    input_sides[dir] == true;
+    input_sides[dir] = true;
     if (input_sides[dir] == true)
     {
-      input_sides[dir] == false;
+      input_sides[dir] = false;
     }
   }
 }
@@ -54,10 +54,10 @@ void object_tile::rotate_output_dir(const int dir)
 
 gameField::gameField()
 {
-  int x = 0;
-  for(int i = 0; i < 10; i++)
+    unsigned int x = 0;
+  for(int i = 0; i < 2; i++)
   {
-    for(int j = 0; j < 10; j++)
+    for(int j = 0; j < 2; j++)
     {
       matrix[i][j].box_index = (x);
       x++;
@@ -66,7 +66,7 @@ gameField::gameField()
 }
 
 
-void printField()
+void gameField::printField()
 {
-  
+    return;
 }

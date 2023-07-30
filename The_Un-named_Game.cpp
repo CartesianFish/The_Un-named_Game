@@ -17,12 +17,12 @@ using namespace std;
 
 int main()
 {
-    const int SLEEP_TIME = 4;
+    const short int SLEEP_TIME = 4;
     bool exit = false;
     while (exit == false)
     {
         int amount = 0;
-        //gameField fieldLayers;
+        gameField fieldLayers;
         string input = "";
         cout << "Command: ";
         cin >> input;
