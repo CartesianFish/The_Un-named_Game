@@ -11,6 +11,7 @@
 #include "tile_space.h"
 #include <chrono>
 #include <thread>
+#include <SFML/Graphics.hpp>
 
 using namespace std;
 
@@ -19,37 +20,50 @@ int main()
 {
     const short int SLEEP_TIME = 4;
     bool exit = false;
-    while (exit == false)
+    sf::RenderWindow window(sf::VideoMode(400, 400), "the_game");
+    sf::Event event;
+    while (exit == false || window.isOpen())
     {
-        int amount = 0;
-        gameField fieldLayers;
-        string input = "";
-        cout << "Command: ";
-        cin >> input;
-        //input = getStartCommands();
-        if (input == "go" || input == "Go")
+        while (window.pollEvent(event))
         {
-            cout << "Amount: ";
-            cin >> amount;
-            cout.flush();
-            this_thread::sleep_for(std::chrono::milliseconds(SLEEP_TIME));
-            //art artPrinter;
-            for (int i = 0; i < amount; i++)
+            if (event.type == sf::Event::Closed)
             {
-                //artPrinter.printArt(0);
-                cout.flush();
-                cout << i + 1 << endl;
-                this_thread::sleep_for(std::chrono::milliseconds(SLEEP_TIME));
-                //system("cls");
+                window.close();
             }
-            input = "";
+            int amount = 0;
+            gameField fieldLayers;
+            string input = "go";
+            //sf::CircleShape rec(100);
+            //cout << "Command: ";
+            //cin >> input;
+            //input = getStartCommands();
+            if (input == "go" || input == "Go")
+            {
+                //cout << "Amount: ";
+                cin >> amount;
+                cout.flush();
+                this_thread::sleep_for(std::chrono::milliseconds(SLEEP_TIME));
+                //art artPrinter;
+                for (int i = 0; i < amount; i++)
+                {
+                    //artPrinter.printArt(0);
+                    cout.flush();
+                    cout << i + 1 << endl;
+                    this_thread::sleep_for(std::chrono::milliseconds(SLEEP_TIME));
+                    //system("cls");
+                }
+                input = "";
+            }
+            if (input == "stop")
+            {
+                exit = true;
+            }
+            //window.clear();
+            //window.draw(rec);
+            //window.display();
         }
-        if (input == "stop")
-        {
-            exit = true;
-        }
+        return 0;
     }
-    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
