@@ -10,6 +10,7 @@
 #include "tile_space.h"
 #include <chrono>
 #include <thread>
+#include <windows.h> 
 //#include <SFML/Graphics.hpp>
 
 using namespace std;
@@ -17,8 +18,12 @@ using namespace std;
 
 int main()
 {
-    const signed short int SLEEP_TIME = 1000;
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    //cout << "This text will be green\n";
+    const signed short int SLEEP_TIME = 10;
     bool exit = false;
+    cout << "You Will Need to Resize Your terminal Window using 'control' + '+' " << endl;
     while (exit == false)
     {
         int amount = 0;
@@ -26,6 +31,10 @@ int main()
         string input;
         cout << "Command: ";
         cin >> input;
+        if (input == "stop")
+        {
+            exit = true;
+        }
         //getScreenSize();
         if (input == "go" || input == "Go")
         {
@@ -36,18 +45,13 @@ int main()
             //art artPrinter;
             for (int i = 0; i < amount; i++)
             {
-                //artPrinter.printArt(0);
+                fieldLayers.printField();
                 cout.flush();
                 cout << i + 1 << endl;
                 this_thread::sleep_for(std::chrono::milliseconds(SLEEP_TIME));
             }
             input = "";
         }
-        if (input == "stop")
-        {
-            exit = true;
-        }
-        //return 0;
     }
 }
 

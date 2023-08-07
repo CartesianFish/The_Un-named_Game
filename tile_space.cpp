@@ -1,5 +1,5 @@
 #include "tile_space.h"
-
+#include <iostream>
 
 using namespace std;
 
@@ -65,8 +65,8 @@ objectTile::~objectTile()
 {
     switch (tileType)
     {
-        case 0:
-            delete inventory;
+        /*case 0:
+            delete inventory;*/
         case 1:
             delete[] inventory;
         case 2:
@@ -91,7 +91,38 @@ gameField::gameField()
 }
 
 
+void gameField::populateField()
+{
+    short int x = 0;
+    for (short int i = 0; i < 30; i++)
+    {
+        fieldArt[i] = "";
+    }
+    for (short int i = 0; i < 10; i++)
+    {
+        for (short int j = 0; j < 10; j++)
+        {
+            fieldArt[x] += matrix[i][j].visualRep;
+        }
+        x++;
+        for (short int j = 0; j < 10; j++)
+        {
+            fieldArt[x] += matrix[i][j].visualRep1;
+        }
+        x++;
+        for (short int j = 0; j < 10; j++)
+        {
+            fieldArt[x] += matrix[i][j].visualRep2;
+        }
+        x++;
+    }
+}
+
 void gameField::printField()
 {
-    return;
+    populateField();
+    for (int i = 0; i < 30; i++)
+    {
+        cout << fieldArt[i] << endl;
+    }
 }

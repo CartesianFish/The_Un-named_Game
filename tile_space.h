@@ -38,6 +38,9 @@ class box
      const unsigned int box_height = 10;
      short int box_index = 0;
      objectTile workspace [10][10];
+     string visualRep = "---";
+     string visualRep1 = "| |";
+     string visualRep2 = "---";
 
 };
 
@@ -45,7 +48,9 @@ class gameField
 {
   public:
       box matrix[10][10];
-      gameField();
+      string fieldArt[30];
+      void populateField();
       void printField();
+      gameField();
       
 };
