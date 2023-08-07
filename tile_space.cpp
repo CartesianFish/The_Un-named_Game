@@ -3,66 +3,91 @@
 
 using namespace std;
 
-void object_tile::rotate_input_dir(const int dir)
+void objectTile::rotate_input_dir(const int dir)
 {
-  if (tile_type == 2)
-  {
-    if (dir == 7)
+    if (tileType == 2)
     {
-      pipe_input_side++;
-      if (pipe_input_side == 7)
-      {
-        pipe_input_side = 1;
-      }
+        if (dir == 7)
+        {
+            pipeInputSide++;
+            if (pipeInputSide == 7)
+            {
+                pipeInputSide = 1;
+            }
+        }
+        else
+        {
+            pipeInputSide = dir;
+        }
     }
 
-    else
+    if (tileType == 1)
     {
-      pipe_input_side = dir;
+        inputSides[dir] = true;
+        if (inputSides[dir] == true)
+        {
+            inputSides[dir] = false;
+        }
     }
-  }
-
-  if (tile_type == 1)
-  {
-    input_sides[dir] = true;
-    if (input_sides[dir] == true)
-    {
-      input_sides[dir] = false;
-    }
-  }
 }
 
-void object_tile::rotate_output_dir(const int dir)
+void objectTile::rotate_output_dir(const int dir)
 {
-  if (tile_type == 2)
-  {
-    if (dir == 7)
+    if (tileType == 2)
     {
-      pipe_output_side++;
-      if (pipe_output_side == 7)
-      {
-        pipe_output_side = 1;
-      }
-    }
+        if (dir == 7)
+        {
+            pipeOutputSide++;
+            if (pipeOutputSide == 7)
+            {
+                pipeOutputSide = 1;
+            }
+        }
 
-    else
-    {
-      pipe_input_side = dir;
+        else
+        {
+            pipeOutputSide = dir;
+        }
     }
-  }
+}
+
+objectTile::objectTile()
+{
+    switch (tileType)
+    {
+        case 1:
+            inventory = new item[2];
+        case 2:
+            inventory = new item[1];
+    }
+}
+objectTile::~objectTile()
+{
+    switch (tileType)
+    {
+        case 0:
+            delete inventory;
+        case 1:
+            delete[] inventory;
+        case 2:
+            delete[] inventory;
+        case 3:
+            delete[] inventory;
+    }
+        
 }
 
 gameField::gameField()
 {
     unsigned int x = 0;
-  for(int i = 0; i < 2; i++)
-  {
-    for(int j = 0; j < 2; j++)
+    for(int i = 0; i < 10; i++)
     {
-      matrix[i][j].box_index = (x);
-      x++;
+        for(int j = 0; j < 10; j++)
+        {
+            matrix[i][j].box_index = (x);
+            x++;
+        }
     }
-  }
 }
 
 
